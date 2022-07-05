@@ -1,16 +1,16 @@
 [submodule "udagram-reverseproxy"]
-    path = udagram-reverseproxy
-    url = https://github.com/abheist/udagram-reverseproxy.git
+	path = udagram-reverseproxy
+	url = https://github.com/abheist/udagram-reverseproxy.git
     branch = main
 [submodule "udagram-frontend"]
-    path = udagram-frontend
-    url = https://github.com/abheist/udagram-frontend.git
+	path = udagram-frontend
+	url = https://github.com/abheist/udagram-frontend.git
     branch = main
 [submodule "udagram-api-feed"]
-    path = udagram-api-feed
-    url = https://github.com/abheist/udagram-api-feed.git
+	path = udagram-api-feed
+	url = https://github.com/abheist/udagram-api-feed.git
     branch = main
 [submodule "udagram-api-user"]
-    path = udagram-api-user
-    url = https://github.com/abheist/udagram-api-user.git
+	path = udagram-api-user
+	url = https://github.com/abheist/udagram-api-user.git
     branch = main
