@@ -1,0 +1,126 @@
+cd0354-monolith-to-microservices-project on  main [+] 
+➜ kubectl describe services                            
+Name:              backend-feed
+Namespace:         default
+Labels:            service=backend-feed
+Annotations:       <none>
+Selector:          service=backend-feed
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.100.35.146
+IPs:               10.100.35.146
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.23.247:8080,172.31.85.100:8080,172.31.92.186:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              backend-user
+Namespace:         default
+Labels:            service=backend-user
+Annotations:       <none>
+Selector:          service=backend-user
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.100.127.119
+IPs:               10.100.127.119
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.18.219:8080,172.31.84.82:8080,172.31.93.85:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              frontend
+Namespace:         default
+Labels:            service=frontend
+Annotations:       <none>
+Selector:          service=frontend
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.100.50.0
+IPs:               10.100.50.0
+Port:              8100  8100/TCP
+TargetPort:        80/TCP
+Endpoints:         172.31.27.79:80
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.100.0.1
+IPs:               10.100.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         172.31.3.231:443,172.31.86.139:443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:                     publicfrontend
+Namespace:                default
+Labels:                   service=frontend
+Annotations:              <none>
+Selector:                 service=frontend
+Type:                     LoadBalancer
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.100.73.65
+IPs:                      10.100.73.65
+LoadBalancer Ingress:     af6cd9566ed7e44489ffeef8c2f2c391-762354092.us-east-1.elb.amazonaws.com
+Port:                     <unset>  80/TCP
+TargetPort:               80/TCP
+NodePort:                 <unset>  30859/TCP
+Endpoints:                172.31.27.79:80
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:                     publicreverseproxy
+Namespace:                default
+Labels:                   service=reverseproxy
+Annotations:              <none>
+Selector:                 service=reverseproxy
+Type:                     LoadBalancer
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.100.97.220
+IPs:                      10.100.97.220
+LoadBalancer Ingress:     a2eadaae92d784276ad3cd7dddae569d-1975764867.us-east-1.elb.amazonaws.com
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  31720/TCP
+Endpoints:                172.31.87.109:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:              reverseproxy
+Namespace:         default
+Labels:            service=reverseproxy
+Annotations:       <none>
+Selector:          service=reverseproxy
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.100.220.100
+IPs:               10.100.220.100
+Port:              8080  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.87.109:8080
+Session Affinity:  None
+Events:            <none>
